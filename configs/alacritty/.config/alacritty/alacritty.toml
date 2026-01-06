@@ -1,0 +1,17 @@
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_material_dark.toml"
+]
+
+[font]
+size = 13
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
