@@ -1,6 +1,7 @@
 # -----------------------------
 # Install oh-my-zsh plugins
 # -----------------------------
+ZSH_DIR="${ZSH:-$HOME/.oh-my-zsh}"
 ZSH_CUSTOM="${ZSH_DIR}/custom"
 
 install_omz_plugin() {

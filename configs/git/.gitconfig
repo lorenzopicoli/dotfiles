@@ -3,3 +3,10 @@
 	email = lorenzopicoli@me.com
 [pull]
 	rebase = false
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[includeIf "gitdir:~/work/"]
+  # Not on git
+  path = ~/.gitconfig.work
