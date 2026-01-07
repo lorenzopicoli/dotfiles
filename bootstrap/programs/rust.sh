@@ -22,4 +22,5 @@ else
     | bash
 fi
 
+log "Updating with rustup"
 rustup update stable

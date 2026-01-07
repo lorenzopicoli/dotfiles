@@ -57,18 +57,37 @@ ensure_pkg_manager() {
   esac
 }
 
+install_pkg_brew() {
+  local pkg="$1"
+  brew list "$pkg" >/dev/null 2>&1 || brew install "$pkg"
+}
+
+install_pkg_apt() {
+  local pkg="$1"
+  dpkg -s "$pkg" >/dev/null 2>&1 || sudo apt install -y "$pkg"
+}
+
+install_pkg_yay() {
+  local pkg="$1"
+  yay -Q "$pkg" >/dev/null 2>&1 || yay -S --needed --noconfirm "$pkg"
+}
+
 install_pkg() {
   local pkg="$1"
 
   case "$PKG_MANAGER" in
     brew)
-      brew list "$pkg" >/dev/null 2>&1 || brew install "$pkg"
+      install_pkg_brew "$pkg"
       ;;
     apt)
-      dpkg -s "$pkg" >/dev/null 2>&1 || sudo apt install -y "$pkg"
+      install_pkg_apt "$pkg"
       ;;
     yay)
-      yay -Q "$pkg" >/dev/null 2>&1 || yay -S --needed --noconfirm "$pkg"
+      install_pkg_yay "$pkg"
+      ;;
+    *)
+      echo "Unsupported package manager: $PKG_MANAGER" >&2
+      return 1
       ;;
   esac
 }

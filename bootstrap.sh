@@ -22,6 +22,7 @@ source "$ROOT_DIR/bootstrap/programs/curl.sh"
 source "$ROOT_DIR/bootstrap/programs/build-essentials.sh"
 source "$ROOT_DIR/bootstrap/programs/zsh.sh"
 source "$ROOT_DIR/bootstrap/programs/git.sh"
+source "$ROOT_DIR/bootstrap/programs/brew.sh"
 source "$ROOT_DIR/bootstrap/programs/rust.sh"
 source "$ROOT_DIR/bootstrap/programs/zellij.sh"
 source "$ROOT_DIR/bootstrap/programs/lazygit.sh"
@@ -39,18 +40,21 @@ source "$ROOT_DIR/bootstrap/programs/fd.sh"
 source "$ROOT_DIR/bootstrap/programs/bat.sh"
 source "$ROOT_DIR/bootstrap/programs/fzf.sh"
 source "$ROOT_DIR/bootstrap/programs/oh-my-zsh-plugins.sh"
+source "$ROOT_DIR/bootstrap/programs/yazi.sh"
 
 # Apply stow once again to make sure all configs are applied (I'm wondering if any installed program might've overwritten the symlinks?)
 source "$ROOT_DIR/stow.sh"
 
+log "==================================================================="
+log "Bootstrap complete"
+log "==================================================================="
 if [[ "$OS" == "macos" && "${#SKIPPED_PROGRAMS[@]}" -gt 0 ]]; then
-  echo
-  echo "The following programs were skipped:"
+  log "==================================================================="
+  log "The following programs were skipped:"
+  log "==================================================================="
   for prog in "${SKIPPED_PROGRAMS[@]}"; do
     echo "  - $prog"
   done
 fi
 
-log "Bootstrap complete"
-echo "Run the following to apply changes:"
-echo "  source ~/.zshrc"
+log "You should restart your terminal to see all the changes"

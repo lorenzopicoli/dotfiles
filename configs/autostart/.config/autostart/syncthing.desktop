@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=syncthing
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_CA]=Syncthing
+Name=Syncthing
+Comment[en_CA]=
+Comment=
