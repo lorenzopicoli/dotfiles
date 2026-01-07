@@ -14,7 +14,7 @@ ensure_pkg_manager
 
 # Programs
 source "$ROOT_DIR/bootstrap/programs/stow.sh"
-source "$ROOT_DIR/bootstrap/stow-apply.sh"
+source "$ROOT_DIR/stow.sh"
 
 source "$ROOT_DIR/bootstrap/create-projects.sh"
 
@@ -41,7 +41,7 @@ source "$ROOT_DIR/bootstrap/programs/fzf.sh"
 source "$ROOT_DIR/bootstrap/programs/oh-my-zsh-plugins.sh"
 
 # Apply stow once again to make sure all configs are applied (I'm wondering if any installed program might've overwritten the symlinks?)
-source "$ROOT_DIR/bootstrap/stow-apply.sh"
+source "$ROOT_DIR/stow.sh"
 
 if [[ "$OS" == "macos" && "${#SKIPPED_PROGRAMS[@]}" -gt 0 ]]; then
   echo

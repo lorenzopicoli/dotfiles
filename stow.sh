@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$ROOT_DIR/configs/"
 TARGET_DIR="$HOME"
+
+
+source "$ROOT_DIR/bootstrap/log.sh"
 
 log "Applying dotfiles with stow"
 
