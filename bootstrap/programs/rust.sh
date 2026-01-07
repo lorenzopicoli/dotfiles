@@ -21,3 +21,5 @@ else
     https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh \
     | bash
 fi
+
+rustup update stable

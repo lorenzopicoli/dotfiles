@@ -3,14 +3,21 @@ import = [
     "~/.config/alacritty/themes/themes/gruvbox_material_dark.toml",
     "~/.config/alacritty/os_specific.toml"
 ]
+live_config_reload=true
 
-# [shell]
-# program = "zellij"
-# args = ["-l", "welcome"]
+
 [terminal.shell]
 program = "/bin/zsh"
 args = ["-lc", "zellij -l welcome"]
 
+[window]
+# decorations = "transparent"
+# blur = true
+# opacity = 0.95
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+unfocused_hollow = true
 
 [font.normal]
 family = "Hack Nerd Font Mono"
