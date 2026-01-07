@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  fzf-tab
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -143,6 +144,7 @@ export NVM_DIR="$HOME/.config/nvm"
 command -v batcat >/dev/null && alias bat=batcat
 alias cat=bat
 alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
+alias l-bc="zellij --layout ~/.config/zellij/bc-entry-layout.kdl"
 alias sz="source ~/.zshrc"
 
 export PATH=$PATH:/usr/local/go/bin

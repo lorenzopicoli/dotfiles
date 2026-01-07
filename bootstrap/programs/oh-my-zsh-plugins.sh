@@ -14,6 +14,8 @@ install_omz_plugin() {
     git clone --depth=1 "$repo" "$ZSH_CUSTOM/plugins/$name"
   fi
 }
+install_omz_plugin fzf-tab \
+  https://github.com/Aloxaf/fzf-tab
 
 install_omz_plugin zsh-autosuggestions \
   https://github.com/zsh-users/zsh-autosuggestions
