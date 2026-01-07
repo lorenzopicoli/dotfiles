@@ -142,8 +142,8 @@ export NVM_DIR="$HOME/.config/nvm"
 # Aliases
 command -v batcat >/dev/null && alias bat=batcat
 alias cat=bat
-
 alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
+alias sz="source ~/.zshrc"
 
 export PATH=$PATH:/usr/local/go/bin
 export ANDROID_HOME=$HOME/Android/Sdk
