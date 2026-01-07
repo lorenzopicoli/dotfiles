@@ -19,6 +19,7 @@ source "$ROOT_DIR/bootstrap/stow-apply.sh"
 source "$ROOT_DIR/bootstrap/create-projects.sh"
 
 source "$ROOT_DIR/bootstrap/programs/curl.sh"
+source "$ROOT_DIR/bootstrap/programs/build-essentials.sh"
 source "$ROOT_DIR/bootstrap/programs/zsh.sh"
 source "$ROOT_DIR/bootstrap/programs/git.sh"
 source "$ROOT_DIR/bootstrap/programs/rust.sh"
