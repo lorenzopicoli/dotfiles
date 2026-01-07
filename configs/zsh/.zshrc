@@ -121,6 +121,7 @@ fi
 if [[ -d "/Users/lorenzo/.local/bin" ]]; then
   export PATH="$PATH:/Users/lorenzo/.local/bin"
 fi
+export PATH="$PATH:/Users/lorenzo/.cargo/bin"
 
 # fzf shell integration
 source <(fzf --zsh)

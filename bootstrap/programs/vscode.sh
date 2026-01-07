@@ -7,7 +7,6 @@ if [[ "$OS" == "macos" ]]; then
   skip_program "Visual Studio Code"
   return
 fi
-
 if command_exists code; then
   log "VS Code already installed"
   return
@@ -15,7 +14,8 @@ fi
 
 case "$PKG_MANAGER" in
   apt)
-    install_pkg code
+    log "Skipping VS Code"
+    skip_program "Visual Studio Code"
     ;;
   yay)
     install_pkg visual-studio-code-bin
