@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 DOTFILES_DIR="$ROOT_DIR/configs/"
 TARGET_DIR="$HOME"
 
