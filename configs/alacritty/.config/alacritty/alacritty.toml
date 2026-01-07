@@ -1,7 +1,16 @@
+[general]
 import = [
     "~/.config/alacritty/themes/themes/gruvbox_material_dark.toml",
     "~/.config/alacritty/os_specific.toml"
 ]
+
+# [shell]
+# program = "zellij"
+# args = ["-l", "welcome"]
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-lc", "zellij -l welcome"]
+
 
 [font.normal]
 family = "Hack Nerd Font Mono"
@@ -13,4 +22,3 @@ style = "Bold"
 [font.bold_italic]
 family = "Hack Nerd Font Mono"
 style = "Bold Italic"
-

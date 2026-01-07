@@ -143,8 +143,8 @@ export NVM_DIR="$HOME/.config/nvm"
 # Aliases
 command -v batcat >/dev/null && alias bat=batcat
 alias cat=bat
-alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
-alias l-bc="zellij --layout ~/.config/zellij/bc-entry-layout.kdl"
+# alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
+# alias l-bc="zellij --layout ~/.config/zellij/bc-entry-layout.kdl"
 alias sz="source ~/.zshrc"
 
 export PATH=$PATH:/usr/local/go/bin
