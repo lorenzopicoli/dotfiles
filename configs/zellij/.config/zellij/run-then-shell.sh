@@ -16,4 +16,9 @@ echo
 
 
 
-exec "${SHELL:-/bin/zsh}" -i
+SHELL_BIN="${SHELL:-}"
+if [[ -z "$SHELL_BIN" || ! -x "$SHELL_BIN" ]]; then
+  SHELL_BIN="$(command -v zsh || command -v bash)"
+fi
+
+exec "$SHELL_BIN" -i

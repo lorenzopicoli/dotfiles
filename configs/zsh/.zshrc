@@ -9,6 +9,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+# ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,8 +71,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -116,6 +120,12 @@ fi
 if [[ -d "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home" ]]; then
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 fi
+if [[ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]]; then
+  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+fi
+if [[ -d "/home/linuxbrew/.linuxbrew/bin" ]]; then
+  export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+fi
 
 # For pipx on macOS
 if [[ -d "/Users/lorenzo/.local/bin" ]]; then
@@ -130,4 +140,12 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Aliases
+command -v batcat >/dev/null && alias bat=batcat
 alias cat=bat
+
+alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
+
+export PATH=$PATH:/usr/local/go/bin
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

@@ -38,6 +38,7 @@ source "$ROOT_DIR/bootstrap/programs/ripgrep.sh"
 source "$ROOT_DIR/bootstrap/programs/fd.sh"
 source "$ROOT_DIR/bootstrap/programs/bat.sh"
 source "$ROOT_DIR/bootstrap/programs/fzf.sh"
+source "$ROOT_DIR/bootstrap/programs/oh-my-zsh-plugins.sh"
 
 # Apply stow once again to make sure all configs are applied (I'm wondering if any installed program might've overwritten the symlinks?)
 source "$ROOT_DIR/bootstrap/stow-apply.sh"

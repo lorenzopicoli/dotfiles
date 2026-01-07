@@ -2,6 +2,9 @@
 
 log "Setting up Alacritty"
 
+source "$ROOT_DIR/configs/alacritty/.config/alacritty/setup-themes.sh"
+source "$ROOT_DIR/configs/alacritty/.config/alacritty/setup-font.sh"
+
 if [[ "$OS" == "macos" ]]; then
   log "Skipping Alacritty on macOS"
   # See https://github.com/orgs/Homebrew/discussions/6482
@@ -11,8 +14,6 @@ fi
 
 if command_exists alacritty; then
   log "Alacritty already installed"
-  return
+else
+  install_pkg alacritty
 fi
-
-install_pkg alacritty
-source "$ROOT_DIR/configs/alacritty/.config/alacritty/setup-themes.sh"

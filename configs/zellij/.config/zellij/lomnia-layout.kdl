@@ -1,0 +1,37 @@
+layout {
+  // A command pane template that runs a script and then drops to a shell
+  pane_template name="keep-open" command="~/.config/zellij/run-then-shell.sh" close_on_exit=true
+
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+
+    children
+
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+
+  tab name="Main app" {
+    pane split_direction="vertical" {
+      keep-open cwd="~/projects/lomnia/backend" {
+        args "npm" "run" "dev:server"
+      }
+      pane split_direction="horizontal" {
+        keep-open cwd="~/projects/lomnia/frontend" {
+          args "npm" "run" "dev"
+        }
+        keep-open cwd="/~/projects/lomnia" {
+          args "psql" "postgres://localhost:5432/local_lomnia"
+        }
+      }
+    }
+  }
+  tab name="Layzgit" {
+    keep-open cwd="~/projects/lomnia/" {
+      args "lazygit"
+    }
+  }
+}
