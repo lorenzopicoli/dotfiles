@@ -8,5 +8,5 @@ log "Setting up zellij"
 if command_exists zellij; then
   log "zellij already installed"
 else
-  cargo install --locked zellij
+  cargo binstall zellij
 fi
