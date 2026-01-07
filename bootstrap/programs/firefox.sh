@@ -8,11 +8,4 @@ if [[ "$OS" == "macos" ]]; then
   return
 fi
 
-case "$PKG_MANAGER" in
-  apt)
-    install_pkg firefox
-    ;;
-  yay)
-    install_pkg firefox
-    ;;
-esac
+install_pkg firefox
