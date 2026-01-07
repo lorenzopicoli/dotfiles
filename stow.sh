@@ -20,7 +20,7 @@ cd "$DOTFILES_DIR"
 for dir in */; do
   log "Stowing $dir"
 
-  if ! output="$(stow --target="$TARGET_DIR" "$dir" 2>&1)"; then
+  if ! output="$(stow --no-folding --target="$TARGET_DIR" "$dir" 2>&1)"; then
     echo
     echo "ERROR: Failed to stow '$dir'"
     echo
