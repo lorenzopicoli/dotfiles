@@ -1,0 +1,18 @@
+.git
+node_modules
+dist
+build
+target
+
+**/Android/Sdk
+
+# Caches
+.cache
+.npm
+.yarn
+.pnpm-store
+
+# OS / editor
+.DS_Store
+.idea
+

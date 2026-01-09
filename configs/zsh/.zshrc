@@ -59,6 +59,8 @@ alias cat=bat
 # alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
 # alias l-bc="zellij --layout ~/.config/zellij/bc-entry-layout.kdl"
 alias sz="source ~/.zshrc"
+# alias f='fd . ~/ --ignore-file "$XDG_CONFIG_HOME/fd/ignore" | fzf'
+alias f="fd . ~/ | fzf"
 
 export PATH=$PATH:/usr/local/go/bin
 export ANDROID_HOME=$HOME/Android/Sdk
