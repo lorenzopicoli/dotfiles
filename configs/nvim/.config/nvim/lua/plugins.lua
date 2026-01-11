@@ -24,7 +24,15 @@ require("mason-lspconfig").setup({
 })
 require("nvim-autopairs").setup({})
 require("lualine").setup({
-	options = { theme = "gruvbox" },
+	options = {
+		theme = "gruvbox",
+	},
+	winbar = {
+		lualine_c = { "filename", "diff", "diagnostics" },
+	},
+	inactive_winbar = {
+		lualine_c = { "filename", "diff", "diagnostics" },
+	},
 })
 require("fzf-lua").setup({ "fzf-native" })
 require("tiny-code-action").setup()
