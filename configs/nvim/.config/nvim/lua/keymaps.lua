@@ -20,8 +20,8 @@ vim.keymap.set("n", "<leader>fh", function()
 	})
 end, { desc = "FZF: Search files in HOME" })
 -- File search
-vim.keymap.set("n", "<leader>fs", function()
-	require("fzf-lua").live_grep()
+vim.keymap.set("n", "<leader>fg", function()
+	require("fzf-lua").live_grep({ resume = true })
 end)
 
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")

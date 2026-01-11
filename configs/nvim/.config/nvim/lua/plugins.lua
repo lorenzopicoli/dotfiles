@@ -34,7 +34,12 @@ require("lualine").setup({
 		lualine_c = { "filename", "diff", "diagnostics" },
 	},
 })
-require("fzf-lua").setup({ "fzf-native" })
+require("fzf-lua").setup({
+	"fzf-native",
+	grep = {
+		multiline = 2,
+	},
+})
 require("tiny-code-action").setup()
 
 vim.o.background = "dark"
