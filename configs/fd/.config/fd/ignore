@@ -11,6 +11,9 @@ target
 .npm
 .yarn
 .pnpm-store
+.wine
+.gradle
+.cargo
 
 # OS / editor
 .DS_Store
