@@ -20,7 +20,7 @@ require("mini.icons").setup()
 require("gitsigns").setup({ signcolumn = false })
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "stylua", "lua_ls", "ts_ls", "biome" },
+	ensure_installed = { "stylua", "lua_ls", "ts_ls", "biome", "basedpyright", "ruff" },
 })
 require("nvim-autopairs").setup({})
 require("lualine").setup({
