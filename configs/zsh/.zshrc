@@ -77,3 +77,4 @@ fi
 # But the following adds timestamps when searching for history and automatically strips them
 # when "pasting" the selection https://github.com/junegunn/fzf/issues/1049
 eval "$(fzf --zsh| sed -e '/zmodload/s/perl/perl_off/' -e '/selected/s/fc -rl/fc -rlt "%F %T"/')"
+export EDITOR="nvim"

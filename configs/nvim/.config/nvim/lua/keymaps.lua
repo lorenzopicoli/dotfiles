@@ -67,4 +67,6 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 	end,
 })
 
-vim.api.nvim_set_hl(0, "NormalNC", { link = "Comment" })
+vim.keymap.set("n", "<leader>w", function()
+	vim.opt.wrap = not vim.opt.wrap:get()
+end, { desc = "Toggle line wrap" })
