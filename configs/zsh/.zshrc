@@ -63,6 +63,7 @@ alias sz="source ~/.zshrc"
 alias f="fd . ~/ | fzf"
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/.local/bin
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
