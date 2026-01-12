@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/activitywatch/aw-qt
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_CA]=ActivityWatch
+Name=ActivityWatch
+Comment[en_CA]=
+Comment=

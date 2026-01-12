@@ -17,10 +17,15 @@ layout {
   tab name="Beancount" {
     pane split_direction="vertical" {
       keep-open cwd="~/projects/loimporters" {
-        args "echo"
+        args "pwd"
       }
-      keep-open cwd="~/projects/beanfinance" {
-        args "bash" "watch.sh"
+      pane split_direction="horizontal" {
+        keep-open cwd="~/projects/beanfinance" {
+          args "pwd"
+        }
+        keep-open cwd="~/projects/beanfinance" {
+          args "bash" "watch.sh"
+        }
       }
     }
   }

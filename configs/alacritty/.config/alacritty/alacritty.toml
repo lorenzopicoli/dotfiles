@@ -11,9 +11,9 @@ program = "/bin/zsh"
 args = ["-lc", "zellij -l welcome"]
 
 [window]
-# decorations = "transparent"
+decorations = "None"
 # blur = true
-# opacity = 0.95
+opacity = 0.98
 [cursor]
 style = { shape = "Block", blinking = "On" }
 blink_interval = 500
