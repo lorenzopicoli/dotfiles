@@ -24,7 +24,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Directory for undo files
 opt.undofile = true -- Enable persistent undo
 opt.completeopt = { "menuone", "popup", "noinsert" } -- Options for completion menu
 opt.winborder = "rounded" -- Use rounded borders for windows
-opt.hlsearch = false -- Disable highlighting of search results
+opt.hlsearch = true -- Enable highlighting of search results
 
 vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
@@ -33,11 +33,11 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.o.laststatus = 3
 -- Format on save
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		vim.lsp.buf.format()
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function(args)
+-- 		vim.lsp.buf.format()
+-- 	end,
+-- })
 -- Show diagnostics inline
 vim.diagnostic.config({ virtual_text = true })

@@ -4,24 +4,24 @@ vim.keymap.set("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 -- leader + PV opens explorer
 vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>", {
-  desc = "Open Oil (project view)",
+	desc = "Open Oil (project view)",
 })
 -- File finder
 vim.keymap.set("n", "<leader>ff", function()
-  require("fzf-lua").combine({ pickers = "oldfiles;git_files" })
+	require("fzf-lua").combine({ pickers = "oldfiles;git_files" })
 end)
 -- File home. Look for file in all of home dir
 vim.keymap.set("n", "<leader>fh", function()
-  require("fzf-lua").files({
-    cwd = vim.env.HOME,
-    prompt = "Home ❯ ",
-    fd_opts = "--ignore-file ~/.config/fd/ignore",
-    hidden = false,
-  })
+	require("fzf-lua").files({
+		cwd = vim.env.HOME,
+		prompt = "Home ❯ ",
+		fd_opts = "--ignore-file ~/.config/fd/ignore",
+		hidden = false,
+	})
 end, { desc = "FZF: Search files in HOME" })
 -- File search
 vim.keymap.set("n", "<leader>fg", function()
-  require("fzf-lua").live_grep({ resume = true })
+	require("fzf-lua").live_grep({ resume = true })
 end)
 
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
@@ -46,27 +46,33 @@ vim.keymap.set("n", "gd", "gri", { remap = true })
 
 -- Code action if kind is quickfix
 vim.keymap.set({ "n", "x" }, "<leader>ca", function()
-  require("tiny-code-action").code_action({
-    filter = function(action, client)
-      local kind = action.kind
+	require("tiny-code-action").code_action({
+		filter = function(action, client)
+			local kind = action.kind
 
-      if kind and kind:find("quickfix", 1, true) then
-        return true
-      end
+			if kind and kind:find("quickfix", 1, true) then
+				return true
+			end
 
-      return false
-    end,
-  })
+			return false
+		end,
+	})
 end, { noremap = true, silent = true })
 -- Diagnostics
 vim.keymap.set("n", "H", "<cmd>lua vim.diagnostic.open_float()<CR>")
 
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
-  callback = function()
-    vim.wo.winhighlight = "Normal:Normal,NormalNC:NormalNC"
-  end,
+	callback = function()
+		vim.wo.winhighlight = "Normal:Normal,NormalNC:NormalNC"
+	end,
 })
 
 vim.keymap.set("n", "<leader>w", function()
-  vim.opt.wrap = not vim.opt.wrap:get()
+	vim.opt.wrap = not vim.opt.wrap:get()
 end, { desc = "Toggle line wrap" })
+
+-- Clear the search register to stop highlight
+vim.keymap.set("n", "<Esc>", function()
+	vim.cmd("nohlsearch")
+	vim.fn.setreg("/", "")
+end, { silent = true })

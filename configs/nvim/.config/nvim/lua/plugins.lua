@@ -14,13 +14,14 @@ vim.pack.add({
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/rachartier/tiny-code-action.nvim" },
+	{ src = "https://github.com/stevearc/conform.nvim" },
 })
 
 require("mini.icons").setup()
 require("gitsigns").setup({ signcolumn = false })
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "stylua", "lua_ls", "ts_ls", "biome", "basedpyright", "ruff" },
+	ensure_installed = { "stylua", "lua_ls", "vtsls", "biome", "basedpyright", "ruff" },
 })
 require("nvim-autopairs").setup({})
 require("lualine").setup({
@@ -90,6 +91,17 @@ require("blink.cmp").setup({
 	appearance = {
 		nerd_font_variant = "mono",
 	},
+	-- Removed buffer for being too noisy
+	sources = {
+		default = { "lsp", "snippets", "path" },
+	},
+	completion = {
+		menu = {
+			draw = {
+				columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
+			},
+		},
+	},
 
 	signature = { enabled = true },
 	fuzzy = { implementation = "prefer_rust_with_warning" },
@@ -135,5 +147,17 @@ require("oil").setup({
 				oil.open_preview({ vertical = true, split = "botright" })
 			end,
 		},
+	},
+})
+
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+		python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
+		javascript = { "biome" },
+	},
+	format_on_save = {
+		timeout_ms = 500,
+		lsp_format = "fallback",
 	},
 })
