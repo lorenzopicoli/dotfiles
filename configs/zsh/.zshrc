@@ -73,8 +73,8 @@ if [[ -f "$HOME/.zshrc.work" ]]; then
   source "$HOME/.zshrc.work"
 fi
 
-# The original "normal way" is:
-# eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(fnm env --shell zsh)"
+
 # But the following adds timestamps when searching for history and automatically strips them
 # when "pasting" the selection https://github.com/junegunn/fzf/issues/1049
 eval "$(fzf --zsh| sed -e '/zmodload/s/perl/perl_off/' -e '/selected/s/fc -rl/fc -rlt "%F %T"/')"
