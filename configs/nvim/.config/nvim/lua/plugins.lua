@@ -154,7 +154,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "ruff_organize_imports", "ruff_fix", "ruff_format" },
-		javascript = { "biome" },
+		javascript = { "biome", "biome-check", "biome-organize-imports" },
+		javascriptreact = { "biome", "biome-check", "biome-organize-imports" },
+		typescript = { "biome", "biome-check", "biome-organize-imports" },
+		typescriptreact = { "biome", "biome-check", "biome-organize-imports" },
 	},
 	format_on_save = {
 		timeout_ms = 500,

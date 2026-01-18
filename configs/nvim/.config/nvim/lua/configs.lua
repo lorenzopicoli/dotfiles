@@ -40,4 +40,12 @@ vim.o.laststatus = 3
 -- 	end,
 -- })
 -- Show diagnostics inline
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+	virtual_text = true,
+	-- float = {
+	-- wrap = true,
+	-- max_width = nil,
+	-- max_height = nil,
+	-- border = "rounded",
+	-- },
+})
