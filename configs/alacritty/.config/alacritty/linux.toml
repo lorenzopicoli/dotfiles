@@ -1,2 +1,7 @@
 [font]
 size = 10
+
+[window]
+decorations = "None"
+# blur = true
+opacity = 0.98
