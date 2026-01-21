@@ -42,7 +42,8 @@ vim.keymap.set("v", "DD", "dd")
 
 vim.keymap.set("n", "cc", "gcc", { remap = true })
 vim.keymap.set("v", "cc", "gcc", { remap = true })
-vim.keymap.set("n", "gd", "gri", { remap = true })
+-- vim.keymap.set("n", "gd", "gri", { remap = true })
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { remap = true })
 
 -- Code action if kind is quickfix
 vim.keymap.set({ "n", "x" }, "<leader>ca", function()
