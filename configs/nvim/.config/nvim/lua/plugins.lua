@@ -1,6 +1,7 @@
 -- ~/.config/nvim-new/lua/plugins.lua
 vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -15,9 +16,12 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/rachartier/tiny-code-action.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/nvim-mini/mini.cursorword" },
+	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })
 
 require("mini.icons").setup()
+require("mini.cursorword").setup({ delay = 500 })
 require("gitsigns").setup({ signcolumn = false })
 require("mason").setup({})
 require("mason-lspconfig").setup({
@@ -164,3 +168,5 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 })
+
+require("harpoon").setup()
