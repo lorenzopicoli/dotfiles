@@ -10,10 +10,7 @@ live_config_reload=true
 program = "/bin/zsh"
 args = ["-lc", "zellij -l welcome"]
 
-[window]
-decorations = "None"
-# blur = true
-opacity = 0.98
+
 [cursor]
 style = { shape = "Block", blinking = "On" }
 blink_interval = 500
