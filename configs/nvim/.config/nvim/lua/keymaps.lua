@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>", {
 })
 -- File finder
 vim.keymap.set("n", "<leader>ff", function()
-	require("fzf-lua").combine({ pickers = "oldfiles;git_files" })
+	require("fzf-lua").combine({ pickers = "git_files" })
 end)
 -- File home. Look for file in all of home dir
 vim.keymap.set("n", "<leader>fh", function()
