@@ -162,6 +162,7 @@ require("conform").setup({
 		javascriptreact = { "biome", "biome-check", "biome-organize-imports" },
 		typescript = { "biome", "biome-check", "biome-organize-imports" },
 		typescriptreact = { "biome", "biome-check", "biome-organize-imports" },
+		markdown = { "prettier", "markdownlint-cli2" },
 	},
 	format_on_save = {
 		timeout_ms = 500,
