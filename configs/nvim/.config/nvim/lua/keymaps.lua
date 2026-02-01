@@ -8,20 +8,15 @@ vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>", {
 })
 -- File finder
 vim.keymap.set("n", "<leader>ff", function()
-	require("fzf-lua").combine({ pickers = "git_files" })
+	require("snacks").picker.smart()
 end)
 -- File home. Look for file in all of home dir
-vim.keymap.set("n", "<leader>fh", function()
-	require("fzf-lua").files({
-		cwd = vim.env.HOME,
-		prompt = "Home ❯ ",
-		fd_opts = "--ignore-file ~/.config/fd/ignore",
-		hidden = false,
-	})
-end, { desc = "FZF: Search files in HOME" })
+vim.keymap.set("n", "<leader>sk", function()
+	require("snacks").picker.diagnostics()
+end, { remap = true })
 -- File search
-vim.keymap.set("n", "<leader>fg", function()
-	require("fzf-lua").live_grep({ resume = true })
+vim.keymap.set("n", "<leader>/", function()
+	require("snacks").picker.grep()
 end)
 
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")

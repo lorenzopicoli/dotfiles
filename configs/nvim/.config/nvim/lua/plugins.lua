@@ -10,7 +10,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim.git" },
 	{ src = "https://github.com/nvim-mini/mini.icons" },
 	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
-	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/rachartier/tiny-code-action.nvim" },
@@ -39,12 +39,19 @@ require("lualine").setup({
 		lualine_c = { "filename", "diff", "diagnostics" },
 	},
 })
-require("fzf-lua").setup({
-	"fzf-native",
-	grep = {
-		multiline = 2,
+
+require("snacks").setup({
+	picker = {
+		enabled = true,
+		hidden = true,
+		ignored = true,
+		matcher = {
+			frecency = true,
+			-- history_bonus = false, -- give more weight to chronological order
+		},
 	},
 })
+
 require("tiny-code-action").setup()
 
 vim.o.background = "dark"
