@@ -17,7 +17,6 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.cursorword" },
 	{ src = "https://github.com/sainnhe/gruvbox-material.git" },
-	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })
 
 require("mini.icons").setup()
@@ -178,5 +177,3 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 })
-
-require("harpoon").setup()
