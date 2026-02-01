@@ -43,7 +43,7 @@ require("snacks").setup({
 	picker = {
 		enabled = true,
 		hidden = true,
-		ignored = true,
+		ignored = false,
 		matcher = {
 			frecency = true,
 			-- history_bonus = false, -- give more weight to chronological order
