@@ -39,6 +39,7 @@ source "$ROOT_DIR/bootstrap/programs/ripgrep.sh"
 source "$ROOT_DIR/bootstrap/programs/fd.sh"
 source "$ROOT_DIR/bootstrap/programs/bat.sh"
 source "$ROOT_DIR/bootstrap/programs/fzf.sh"
+source "$ROOT_DIR/bootstrap/programs/fx.sh"
 source "$ROOT_DIR/bootstrap/programs/oh-my-zsh-plugins.sh"
 source "$ROOT_DIR/bootstrap/programs/yazi.sh"
 
