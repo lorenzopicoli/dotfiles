@@ -1,4 +1,3 @@
--- ~/.config/nvim-new/lua/plugins.lua
 vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -17,6 +16,7 @@ vim.pack.add({
 	{ src = "https://github.com/rachartier/tiny-code-action.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.cursorword" },
+	{ src = "https://github.com/sainnhe/gruvbox-material.git" },
 	{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })
 
@@ -30,7 +30,7 @@ require("mason-lspconfig").setup({
 require("nvim-autopairs").setup({})
 require("lualine").setup({
 	options = {
-		theme = "gruvbox",
+		theme = "gruvbox-material",
 	},
 	winbar = {
 		lualine_c = { "filename", "diff", "diagnostics" },
@@ -48,7 +48,9 @@ require("fzf-lua").setup({
 require("tiny-code-action").setup()
 
 vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_better_performance = 1
+vim.cmd.colorscheme("gruvbox-material")
 
 require("gitsigns").setup({
 	signs = {
