@@ -25,7 +25,7 @@ opt.undofile = true -- Enable persistent undo
 opt.completeopt = { "menuone", "popup", "noinsert" } -- Options for completion menu
 opt.winborder = "rounded" -- Use rounded borders for windows
 opt.hlsearch = true -- Enable highlighting of search results
-
+vim.opt.backupcopy = "yes" -- Changes how changes are made to files to properly be picked up by daemons like node --watch https://github.com/nodejs/node/issues/54774
 vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
 -- Believe this shares the clipboard with system?

@@ -17,6 +17,8 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/conform.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.cursorword" },
 	{ src = "https://github.com/sainnhe/gruvbox-material.git" },
+	{ src = "https://github.com/tpope/vim-fugitive" },
+	{ src = "https://github.com/tpope/vim-rhubarb" },
 })
 
 require("mini.icons").setup()
