@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-log "Setting up zellij"
+PROGRAM="zellij"
 
-# -----------------------------
-# Install zellij
-# -----------------------------
-if command_exists zellij; then
-  log "zellij already installed"
-else
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  cargo binstall zellij
+elif [[ "$OS" == "arch" ]]; then
+  sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
   cargo binstall zellij
 fi
 

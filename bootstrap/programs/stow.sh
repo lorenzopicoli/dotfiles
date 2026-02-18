@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-log "Setting up GNU Stow"
+PROGRAM="stow"
 
-if command_exists stow; then
-  log "gnu stow already installed"
-else
-  install_pkg stow
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  brew install $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y $PROGRAM
 fi

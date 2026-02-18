@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-log "Setting up Curl"
+PROGRAM="curl"
 
+log "Setting up $PROGRAM"
 if [[ "$OS" == "macos" ]]; then
-  return
+  skip_program 'curl'
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
+ apt install -y $PROGRAM
 fi
-
-install_pkg curl 

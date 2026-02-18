@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-log "Setting up lazygit"
+PROGRAM="lazygit"
 
-if command_exists lazygit; then
-  log "lazygit already installed"
-else
-  install_pkg lazygit
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  brew install $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y $PROGRAM
 fi

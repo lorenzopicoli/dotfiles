@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PROGRAM="vlc"
+
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  skip_program $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+ sudo pacman -S --noconfirm vlc-plugin-ffmpeg
+elif [[ "$OS" == "apt" ]]; then
+ skip_program $PROGRAM
+fi

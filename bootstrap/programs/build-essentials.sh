@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-log "Setting up build-essentials"
 
-if command_exists uv; then
-  log "build-essentials already installed"
-  return
+PROGRAM="base-devel/build-essential"
+
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  skip_program $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm base-devel
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y build-essential
 fi
-
-case "$PKG_MANAGER" in
-  yay)
-    install_pkg base-devel
-    ;;
-  apt)
-    install_pkg build-essential
-    ;;
-esac

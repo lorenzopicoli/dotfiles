@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if command_exists cargo; then
+if command_exists rustup; then
   log "cargo already installed"
 else
   log "installing rust/cargo"

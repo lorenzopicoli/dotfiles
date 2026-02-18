@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-FONT_NAME="Hack Nerd Font Mono"
+PROGRAM="Hack nerd font"
 
-
-log "MISSING INSTALLATION FOR FONTS"
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  skip_program $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ pacman -S --noconfirm ttf-hack-nerd
+elif [[ "$OS" == "apt" ]]; then
+ skip_program y $PROGRAM
+fi

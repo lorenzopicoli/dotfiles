@@ -49,6 +49,7 @@ if [[ -d "/Users/lorenzo/.local/bin" ]]; then
   export PATH="$PATH:/Users/lorenzo/.local/bin"
 fi
 export PATH="$PATH:/Users/lorenzo/.cargo/bin"
+export PATH="$PATH:/root/.cargo/bin"
 
 # fzf shell integration
 source <(fzf --zsh)
@@ -79,3 +80,4 @@ eval "$(fnm env --shell zsh)"
 # when "pasting" the selection https://github.com/junegunn/fzf/issues/1049
 eval "$(fzf --zsh| sed -e '/zmodload/s/perl/perl_off/' -e '/selected/s/fc -rl/fc -rlt "%F %T"/')"
 export EDITOR="nvim"
+export TERMINAL="ghostty"

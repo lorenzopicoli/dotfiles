@@ -1,0 +1,19 @@
+[providers]
+default = [
+  "desktopapplications",
+  "calc",
+  "runner",
+  "files",
+  "websearch",
+  "clipboard"
+] 
+empty = ["desktopapplications"] # providers to be queried when query is empty
+ignore_preview = [] # providers that should not show previews
+max_results = 50 # global max results
+
+
+
+[[builtins.custom_commands.commands]]
+name = "Edit config"
+icon = "accessories-text-editor"
+cmd = 'xdg-open ~/.config/walker/config.toml'

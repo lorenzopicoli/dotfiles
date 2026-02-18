@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
-log "Setting up fd"
+PROGRAM="fd"
 
-if command_exists fd || command_exists fdfind; then
-  log "fd already installed"
-  return
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  brew install $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y fd-find
 fi
-
-case "$PKG_MANAGER" in
-  apt)
-    install_pkg fd-find
-    ;;
-  *)
-    install_pkg fd
-    ;;
-esac

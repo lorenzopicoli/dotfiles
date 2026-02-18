@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-log "Setting up git"
 
-if command_exists git; then
-  log "git already installed"
-else
-  install_pkg git
+PROGRAM="git"
+
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  skip_program $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y $PROGRAM
 fi

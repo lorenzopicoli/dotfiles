@@ -1,43 +1,41 @@
 #!/usr/bin/env bash
 
-log "Setting up Yazi"
+PROGRAM="yazi"
+log "Setting up $PROGRAM"
+
 if command_exists yazi; then
   log "Yazi already installed"
   return
 fi
-case "$OS" in
-  macos)
-    install_pkg yazi
-    install_pkg ffmpeg
-    install_pkg sevenzip
-    install_pkg jq
-    install_pkg poppler
-    install_pkg fd
-    install_pkg zoxide
-    install_pkg resvg
-    install_pkg imagemagick
-    ;;
-  apt)
-    # Try to use brew 
-    install_pkg_brew yazi
-    install_pkg_brew ffmpeg
-    install_pkg_brew sevenzip
-    install_pkg_brew jq
-    install_pkg_brew poppler
-    install_pkg_brew fd
-    install_pkg_brew zoxide
-    install_pkg_brew resvg
-    install_pkg_brew imagemagick
-    ;;
-  arch)
-    install_pkg yazi
-    install_pkg ffmpeg
-    install_pkg 7zip
-    install_pkg jq
-    install_pkg poppler
-    install_pkg fd
-    install_pkg zoxide
-    install_pkg resvg
-    install_pkg imagemagick
-    ;;
-esac
+
+if [[ "$OS" == "macos" ]]; then
+  brew install $PROGRAM
+  brew install ffmpeg
+  brew install sevenzip
+  brew install jq
+  brew install poppler
+  brew install fd
+  brew install zoxide
+  brew install resvg
+  brew install imagemagick
+elif [[ "$OS" == "arch" ]]; then
+  sudo pacman -S --noconfirm $PROGRAM
+  sudo pacman -S --noconfirm ffmpeg
+  sudo pacman -S --noconfirm 7zip
+  sudo pacman -S --noconfirm jq
+  sudo pacman -S --noconfirm poppler
+  sudo pacman -S --noconfirm fd
+  sudo pacman -S --noconfirm zoxide
+  sudo pacman -S --noconfirm resvg
+  sudo pacman -S --noconfirm imagemagick
+elif [[ "$OS" == "apt" ]]; then
+  sudo brew install $PROGRAM
+  sudo brew install ffmpeg
+  sudo brew install sevenzip
+  sudo brew install jq
+  sudo brew install poppler
+  sudo brew install fd
+  sudo brew install zoxide
+  sudo brew install resvg
+  sudo brew install imagemagick
+fi

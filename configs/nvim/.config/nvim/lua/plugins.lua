@@ -19,8 +19,16 @@ vim.pack.add({
 	{ src = "https://github.com/sainnhe/gruvbox-material.git" },
 	{ src = "https://github.com/tpope/vim-fugitive" },
 	{ src = "https://github.com/tpope/vim-rhubarb" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
+require("nvim-treesitter").setup()
+require("nvim-treesitter").install({
+	"rust",
+	"javascript",
+	"typescript",
+	"regex",
+})
 require("mini.icons").setup()
 require("mini.cursorword").setup({ delay = 500 })
 require("gitsigns").setup({ signcolumn = false })

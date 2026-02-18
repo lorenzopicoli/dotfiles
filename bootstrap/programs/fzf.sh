@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-log "Setting up fzf"
+PROGRAM="fzf"
 
-if command_exists fzf; then
-  log "fzf already installed"
-  return
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  brew install fzf
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm fzf
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y fzf
 fi
-
-install_pkg fzf

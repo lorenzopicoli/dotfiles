@@ -2,13 +2,15 @@
 
 log "Setting up zsh"
 
-# -----------------------------
-# Install zsh
-# -----------------------------
-if command_exists zsh; then
-  log "zsh already installed"
-else
-  install_pkg zsh
+PROGRAM="zsh"
+
+log "Setting up $PROGRAM"
+if [[ "$OS" == "macos" ]]; then
+  brew install $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ sudo pacman -S --noconfirm $PROGRAM 
+elif [[ "$OS" == "apt" ]]; then
+ sudo apt install -y $PROGRAM
 fi
 
 ZSH_PATH="$(command -v zsh)"

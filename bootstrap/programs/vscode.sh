@@ -1,23 +1,13 @@
 #!/usr/bin/env bash
 
-log "Setting up Visual Studio Code"
 
+PROGRAM="vscode"
+
+log "Setting up $PROGRAM"
 if [[ "$OS" == "macos" ]]; then
-  log "Skipping VS Code on macOS (remember to setup code CLI)"
-  skip_program "Visual Studio Code"
-  return
+  skip_program $PROGRAM
+elif [[ "$OS" == "arch" ]]; then
+ yay -S --needed --noconfirm visual-studio-code-bin
+elif [[ "$OS" == "apt" ]]; then
+ skip_program $PROGRAM
 fi
-if command_exists code; then
-  log "VS Code already installed"
-  return
-fi
-
-case "$PKG_MANAGER" in
-  apt)
-    log "Skipping VS Code"
-    skip_program "Visual Studio Code"
-    ;;
-  yay)
-    install_pkg visual-studio-code-bin
-    ;;
-esac
