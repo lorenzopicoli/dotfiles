@@ -1,6 +1,10 @@
-command = zellij
+shell-integration = zsh
+
+command = /bin/zsh -c 'zellij -l welcome'
 
 theme = Gruvbox Dark Hard
 
-font-size = 11
-font-family = "Hack Nerd Font Mono"
+font-family = Hack Nerd Font Mono
+adjust-cell-width = -1
+
+config-file = os_specific
