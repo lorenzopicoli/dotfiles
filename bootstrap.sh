@@ -55,6 +55,7 @@ source "$ROOT_DIR/bootstrap/programs/postgres.sh"
 source "$ROOT_DIR/bootstrap/programs/udisks2.sh"
 # source "$ROOT_DIR/bootstrap/programs/walker.sh"
 source "$ROOT_DIR/bootstrap/programs/vicinae.sh"
+source "$ROOT_DIR/bootstrap/programs/hyprsunset.sh"
 
 # Apply stow once again to make sure all configs are applied (I'm wondering if any installed program might've overwritten the symlinks?)
 source "$ROOT_DIR/stow.sh"
