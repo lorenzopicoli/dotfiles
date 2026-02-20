@@ -27,7 +27,6 @@ source "$ROOT_DIR/bootstrap/skipped.sh"
 # Detect OS and ensure package manager
 detect_os
 log "Detected OS: $OS"
-ensure_pkg_manager
 
 # Source the program script
 log "Installing $PROGRAM_NAME"

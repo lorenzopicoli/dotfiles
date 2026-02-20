@@ -9,7 +9,7 @@ elif [[ "$OS" == "arch" ]]; then
   sudo systemctl enable postgresql.service
 
   # Initialize the database cluster if not already done
-  if [[ ! -f /var/lib/postgres/data/PG_VERSION ]]; then
+  if ! sudo -u postgres test -f /var/lib/postgres/data/PG_VERSION; then
     sudo -u postgres initdb -D /var/lib/postgres/data --encoding=UTF8 --locale=en_US.UTF-8
   fi
 

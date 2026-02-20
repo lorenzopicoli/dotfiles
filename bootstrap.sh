@@ -10,8 +10,6 @@ source "$ROOT_DIR/bootstrap/skipped.sh"
 detect_os
 log "Detected OS: $OS"
 
-ensure_pkg_manager
-
 # Programs
 source "$ROOT_DIR/bootstrap/programs/stow.sh"
 source "$ROOT_DIR/stow.sh"
@@ -55,6 +53,8 @@ source "$ROOT_DIR/bootstrap/programs/hyprshot.sh"
 source "$ROOT_DIR/bootstrap/programs/bitwarden.sh"
 source "$ROOT_DIR/bootstrap/programs/postgres.sh"
 source "$ROOT_DIR/bootstrap/programs/udisks2.sh"
+# source "$ROOT_DIR/bootstrap/programs/walker.sh"
+source "$ROOT_DIR/bootstrap/programs/vicinae.sh"
 
 # Apply stow once again to make sure all configs are applied (I'm wondering if any installed program might've overwritten the symlinks?)
 source "$ROOT_DIR/stow.sh"
