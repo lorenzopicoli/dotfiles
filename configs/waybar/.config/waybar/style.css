@@ -1,13 +1,11 @@
 
 * {
-  background-color: rgba(29,32,33,1);
-
   color: white;
   border: none;
   border-radius: 0;
   min-height: 0;
   font-family: "Hack Nerd Font";
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .modules-left {
@@ -18,14 +16,18 @@
   margin-right: 8px;
 }
 
+window#waybar {
+  background-color: rgba(29,32,33,0.85);
+}
+
 #workspaces button {
-  /* all: initial; */
   opacity: 0.4;
   padding: 0 6px;
-  margin: 0 1.5px;
+  margin: 0 2px;
   min-width: 9px;
 }
 #workspaces button.active {
+  background-color: #504945;
   opacity: 1;
 }
 
@@ -42,24 +44,9 @@
 #battery,
 #pulseaudio {
   min-width: 12px;
-  margin: 0 7.5px;
+  margin: 0 10px;
 }
 
-#tray {
-  margin-right: 16px;
-}
-
-#network {
-  margin-right: 13px;
-}
-
-#custom-expand-icon {
-  margin-right: 18px;
-}
-
-tooltip {
-  padding: 2px;
-}
 
 #clock {
   margin-left: 8.75px;

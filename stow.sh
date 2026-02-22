@@ -32,3 +32,7 @@ for dir in */; do
     exit 1
   fi
 done
+
+source "$ROOT_DIR/bootstrap/package-manager.sh"
+source "$ROOT_DIR/configs/ghostty/.config/ghostty/setup-font.sh"
+
