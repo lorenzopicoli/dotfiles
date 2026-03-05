@@ -34,5 +34,8 @@ for dir in */; do
 done
 
 source "$ROOT_DIR/bootstrap/package-manager.sh"
+detect_os
+log "Detected OS: $OS"
+
 source "$ROOT_DIR/configs/ghostty/.config/ghostty/setup-font.sh"
 
