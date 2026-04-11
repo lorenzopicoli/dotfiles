@@ -48,8 +48,10 @@ fi
 if [[ -d "/Users/lorenzo/.local/bin" ]]; then
   export PATH="$PATH:/Users/lorenzo/.local/bin"
 fi
-export PATH="$PATH:/Users/lorenzo/.cargo/bin"
-export PATH="$PATH:/root/.cargo/bin"
+
+if [[ -d "$HOME/.cargo/bin" ]]; then
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
 
 # fzf shell integration
 source <(fzf --zsh)
@@ -57,6 +59,7 @@ source <(fzf --zsh)
 # Aliases
 command -v batcat >/dev/null && alias bat=batcat
 alias cat=bat
+alias cd=z
 # alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
 # alias l-bc="zellij --layout ~/.config/zellij/bc-entry-layout.kdl"
 alias sz="source ~/.zshrc"
@@ -79,5 +82,6 @@ eval "$(fnm env --shell zsh)"
 # But the following adds timestamps when searching for history and automatically strips them
 # when "pasting" the selection https://github.com/junegunn/fzf/issues/1049
 eval "$(fzf --zsh| sed -e '/zmodload/s/perl/perl_off/' -e '/selected/s/fc -rl/fc -rlt "%F %T"/')"
+eval "$(zoxide init zsh)"
 export EDITOR="nvim"
 export TERMINAL="ghostty"
