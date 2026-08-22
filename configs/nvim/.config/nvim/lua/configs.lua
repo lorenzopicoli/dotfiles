@@ -28,6 +28,9 @@ opt.hlsearch = true -- Enable highlighting of search results
 vim.opt.backupcopy = "yes" -- Changes how changes are made to files to properly be picked up by daemons like node --watch https://github.com/nodejs/node/issues/54774
 vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
 -- Believe this shares the clipboard with system?
 vim.opt.clipboard = "unnamedplus"
 
