@@ -7,7 +7,8 @@ return {
 			diagnostics = {
 				globals = {
 					'vim',
-					'require'
+					'require',
+					'hl',
 				},
 			},
 			workspace = {
