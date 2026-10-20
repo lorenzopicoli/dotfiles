@@ -278,7 +278,7 @@ hl.device({
 
 hl.device({
 	name = "razer-razer-deathadder-essential",
-	sensitivity = 0,
+	sensitivity = -0.5,
 	accel_profile = "adaptive",
 })
 
