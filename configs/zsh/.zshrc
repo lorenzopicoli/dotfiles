@@ -63,6 +63,7 @@ alias cd=z
 # alias l-lomnia="zellij --layout ~/.config/zellij/lomnia-layout.kdl"
 # alias l-bc="zellij --layout ~/.config/zellij/bc-entry-layout.kdl"
 alias sz="source ~/.zshrc"
+alias vpass="bw get password \"Ansible vault password\" | wl-copy --trim-newline"
 # alias f='fd . ~/ --ignore-file "$XDG_CONFIG_HOME/fd/ignore" | fzf'
 alias f="fd . ~/ | fzf"
 
